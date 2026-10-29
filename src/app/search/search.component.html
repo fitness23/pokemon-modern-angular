@@ -1,0 +1,47 @@
+@if (detailValue(); as detail) {
+  <app-pokemon-detail [detail]="detail" />
+}
+
+<form [formGroup]="myForm" novalidate class="generalForm">
+  <div class="generalSearchOption">
+    <div class="generalSearchOptionInner">
+      <div class="generalSearchOptionTitle">Search for Pokemon</div>
+      <ol>
+        <li class="selectQuestion">
+          <label for="types">By Types</label>
+          <select id="types" formControlName="types" (change)="setSearchUrl('types')">
+            <option [value]="null">Please select</option>
+            @for (pokemonType of typeList(); track pokemonType.url) {
+              <option [value]="pokemonType.url">{{pokemonType.name | titlecase}}</option>
+            }
+          </select>
+        </li>
+        <li><div class="divider">or</div></li>
+        <li class="selectQuestion">
+          <label for="abilities">By Abilities</label>
+          <select id="abilities" formControlName="abilities" (change)="setSearchUrl('abilities')">
+            <option [value]="null">Please select</option>
+            @for (pokemonAbility of abilityList(); track pokemonAbility.url) {
+              <option [value]="pokemonAbility.url">{{pokemonAbility.name | titlecase}}</option>
+            }
+          </select>
+        </li>
+      </ol>
+    </div>
+  </div>
+</form>
+
+<div class="content">
+
+  @if (itemList().length) {
+    <table class="standardTable">
+      <tr><th>Name</th><th>View</th></tr>
+      @for (item of itemList(); track item.pokemon.url) {
+        <tr><td>{{item.pokemon.name | titlecase}}</td><td><a class="viewPokemon" (click)="viewPokemon(item.pokemon.url)">View Pokemon Character</a></td></tr>
+      }
+    </table>
+  } @else {
+    <div class="useSearch">Please use the search to filter various Pokemon.</div>
+  }
+
+</div>

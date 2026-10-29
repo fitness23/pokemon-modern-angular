@@ -1,0 +1,20 @@
+<div id="detail">
+  <div class="image"><img [src]="detail().sprites?.front_default" [title]="detail().name | titlecase" /></div>
+  <div class="stats">
+    <div class="name">Name: {{detail().name | titlecase}}</div>
+    <div class="ability">Abilities:
+      <ul>
+        @for (ability of detail().abilities; track ability.ability.name) {
+          <li>{{ability.ability.name | titlecase}}</li>
+        }
+      </ul>
+    </div>
+    <div class="move">Moves:
+      <ul>
+        @for (move of detail().moves; track move.move.name) {
+          <li>{{move.move.name | titlecase}}</li>
+        }
+      </ul>
+    </div>
+  </div>
+</div>

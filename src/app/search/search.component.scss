@@ -1,0 +1,100 @@
+@use '../../variables' as c;
+
+.generalForm{
+
+    ol{
+      margin: 0px;
+      padding: 0px;
+      list-style-type: none;
+    }
+  
+      li{
+          margin-bottom: 1.6em;
+  
+          label{
+              display: block;
+              margin-bottom: 1em;
+          }
+  
+          select {
+              padding: 1em;
+              border: 1px solid #CCC6BE;
+              width: 100%;
+              border-radius: 6px;
+            }
+      }
+      
+  }
+  
+  .divider{
+    //border-top: 1px solid #FFFFFF;
+    padding: 0.6em 0em;
+    //border-bottom: 1px solid #FFFFFF;
+    text-align: center;
+  }
+  
+  .generalSearchOption{
+  
+    @media #{c.$desktopView}
+    {
+      float: left;
+      width: 12em;
+    }
+  
+    @media #{c.$mobileView}
+    {
+      margin-bottom: 3em;
+    }
+      
+  
+      .generalSearchOptionTitle{
+          font-size: 1.2rem;
+          margin-bottom: 1.8em;
+      }
+  }
+  
+  .content{
+    @media #{c.$desktopView}
+      {
+        margin: 0em 16em;
+      }
+      
+  }
+  
+  table.standardTable {
+  
+      width: 100%;
+      border-collapse: collapse;
+      border-radius: 12px 12px 0px 0px;
+      color: #666666;
+      background: #FFFFFF;
+      margin-bottom: 1.8em;
+  
+      tr {
+        border-bottom: 2px solid #f0f1f2;
+      }
+  
+      th {
+        text-align: left;
+        padding: 1em 2em;
+      }
+  
+      td {
+        padding: 1em 2em;
+  
+        a {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+  
+  
+    }
+  
+    .useSearch{
+      padding: 1em;
+      background-color: #feca1b;
+      border-radius: 12px;
+      border: 4px solid #3761a8;
+      color: #3761a8;
+    }

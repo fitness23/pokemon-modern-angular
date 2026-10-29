@@ -1,0 +1,17 @@
+<p>
+  Press the button below to start an async call. You'll see it becoming disabled during async call data transfer:
+</p>
+<button type="button" [disabled]="items.isLoading()" (click)="load()">Get all Fire Pokemon</button>
+
+@if (pokemon().length) {
+  <div>
+    <p>Here are all the fire pokemon:</p>
+    <ul>
+      @for (item of pokemon(); track item.name) {
+        <li>{{item.name | titlecase}}</li>
+      }
+    </ul>
+  </div>
+} @else {
+  <div style="margin-top: 20px;">Press the button above.</div>
+}

@@ -1,0 +1,6 @@
+<p>Here are all the water pokemon:</p>
+<ul>
+  @for (item of pokemon(); track item.name) {
+    <li>{{item.name | titlecase}}</li>
+  }
+</ul>
